@@ -25,7 +25,7 @@ int media(){
     printf("Mentiroso...");
     return 1;
   }
-
+  printf("O aluno %s da matricula %d que obteve notas %lf e %lf foi:\n", a1.Nome, a1.Matricula, a1.nota1, a1.nota2);
   if(res >= 6){
     printf("Aprovado!");
   }
