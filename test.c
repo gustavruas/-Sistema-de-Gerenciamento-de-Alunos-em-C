@@ -11,7 +11,8 @@ int media(){
   struct Aluno a1;
 
   printf("Digite seu nome:");
-  scanf("%s", a1.Nome);
+  fgets(a1.Nome, sizeof(a1.Nome), stdin); // Entender essa linha criada por IA, mas que resolve o problema com o espaço destruindo o programa
+  a1.Nome[strcspn(a1.Nome, "\n")] = '\0';  // Isso remove a nova linha
   printf("Digite sua matricula:");
   scanf("%d", &a1.Matricula);
   printf("Digite sua nota1:");
@@ -21,7 +22,7 @@ int media(){
 
   double res = (a1.nota1+a1.nota2)/2;
 
-  if(a1.nota1 > 10 || a1.nota2 > 10){
+  if(a1.nota1 > 10 || a1.nota1 < 0|| a1.nota2 < 0|| a1.nota2 > 10){
     printf("Mentiroso...");
     return 1;
   }
